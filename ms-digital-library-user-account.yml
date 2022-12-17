@@ -1,64 +1,38 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: 'true'
+  endpoint:
+    metrics:
+      enabled: 'true'
+    prometheus:
+      enabled: 'true'
+    gateway:
+      enabled: 'true'
 spring:
-  application:
-    name: ms-pedidos-gestion-productos
-
   datasource:
-    username: postgres
-    url: jdbc:postgresql://localhost:5432/DigitalLibraryDB
-    platform: postgres
-    password: postgres
     jpa:
       properties:
         hibernate:
           dialect: org.hibernate.dialect.PostgreSQLDialect
           format_sql: 'true'
-      show-sql: 'true'
       hibernate:
         ddl-auto: update
-
-
-
-server:
-  port: 8081
-
-
-# Registry Client
-
+      show-sql: 'true'
+    password: postgres
+    username: postgres
+    url: 'jdbc:postgresql://localhost:5432/DigitalLibraryDB '
+  application:
+    name: ms-pedidos-gestion-productos
 eureka:
   client:
-    fetch-registry: true
+    fetch-registry: 'true'
     serviceUrl:
       defaultZone: http://localhost:8889/eureka
-
-# Actuator
-# management:
-#   endpoints:
-#     web:
-#       exposure:
-#         include: "*"
-
-#Metrics related configurations
-management:
-  endpoint:
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
-    gateway:
-      enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  metrics:
-    export:
-      prometheus:
-        enabled: true
-
-#keycloak:
-#  realm: realm-proyecto
-#  auth-server-url: http://localhost:8080/
-#  resource: springboot-keycloak.
-#  use-resource-role-mappings: false
-#  public-client: true
-#  bearer-only: true
+server:
+  port: '8081'
