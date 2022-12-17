@@ -21,6 +21,9 @@ spring:
         hibernate:
           dialect: org.hibernate.dialect.PostgreSQLDialect
           format_sql: 'true'
+      jdbc:
+        lob:
+          non_contextual_creation: 'true'
       hibernate:
         ddl-auto: update
       show-sql: 'true'
@@ -28,11 +31,11 @@ spring:
     username: postgres
     url: 'jdbc:postgresql://localhost:5432/DigitalLibraryDB '
   application:
-    name: ms-pedidos-gestion-productos
-eureka:
-  client:
-    fetch-registry: 'true'
-    serviceUrl:
-      defaultZone: http://localhost:8889/eureka
+    name: ms-digital-library-user-account
+#eureka:
+#  client:
+#    fetch-registry: 'true'
+#    serviceUrl:
+#      defaultZone: http://localhost:8889/eureka
 server:
   port: '8081'
