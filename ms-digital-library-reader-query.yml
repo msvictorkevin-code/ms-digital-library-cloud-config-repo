@@ -6,7 +6,7 @@ server:
 spring:
   data:
     mongodb:
-      database: MICROJAVA220822_PEDIDO_QUERY
+      database: MICROJAVA220822_DIGITALLIBRARYDB
       #        username:
       #        password:
       host: localhost

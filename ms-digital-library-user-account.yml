@@ -29,7 +29,7 @@ spring:
       show-sql: 'true'
     password: postgres
     username: postgres
-    url: 'jdbc:postgresql://localhost:5432/DigitalLibraryDB '
+    url: 'jdbc:postgresql://localhost:5432/MICROJAVA220822_DIGITALLIBRARYDB'
   application:
     name: ms-digital-library-user-account
 #eureka:
