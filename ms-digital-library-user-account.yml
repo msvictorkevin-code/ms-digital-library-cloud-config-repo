@@ -13,8 +13,10 @@ management:
     prometheus:
       enabled: 'true'
     gateway:
-      enabled: 'true'
+      enabled: 'true '
 spring:
+  jpa:
+    generate-ddl: 'true'
   datasource:
     jpa:
       properties:
@@ -25,15 +27,22 @@ spring:
         lob:
           non_contextual_creation: 'true'
       hibernate:
-        ddl-auto: update
+        ddl-auto: none
       show-sql: 'true'
     password: postgres
     username: postgres
-    url: 'jdbc:postgresql://localhost:5432/MICROJAVA220822_DIGITALLIBRARYDB '
-eureka:
-  client:
-    fetch-registry: 'true'
-    serviceUrl:
-      defaultZone: http://localhost:8889/eureka
+    url: jdbc:postgresql://localhost:5432/MICROJAVA220822_DIGITALLIBRARYDB
+  sql:
+    init:
+      mode: always
+sring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+#eureka:
+#  client:
+#    fetch-registry: 'true'
+#    serviceUrl:
+#      defaultZone: http://localhost:8889/eureka
 server:
   port: '8081'
